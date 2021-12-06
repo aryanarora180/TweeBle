@@ -8,7 +8,8 @@ const NewTweet = () => {
 
     const makeTweet = async (e) => {
         e.preventDefault();
-        await tweeble.methods.postTweet(tweet).send({from: account});
+        const time = Date.now();
+        await tweeble.methods.postTweet(tweet, time).send({from: account});
         window.location.reload();
     }
     return ( 

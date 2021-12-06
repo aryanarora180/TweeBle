@@ -29,7 +29,8 @@ const TweetCard = ({tweet}) => {
                     
                     <div class="posted-author">
                         <h6 class="author"><a href="profile.html">User: {tweet.author}</a></h6>
-                        <span class="post-time">{`${Math.abs(new Date().getHours() - new Date(parseInt(tweet.timestamp)).getHours())} hours ago`}</span>
+                        <p>{console.log(tweet.timestamp)}</p>
+                        <span class="post-time">{Date(tweet.timestamp).toString()}</span>
                     </div>
 
                     <div />
