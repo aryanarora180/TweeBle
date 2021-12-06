@@ -46,7 +46,7 @@ contract TweeBle {
         return tweets[id];
     }
 
-    function postTweet(string memory _content) public {
+    function postTweet(string memory _content, uint256 _timestamp) public {
         // Check to make sure string is empty or not
         require(bytes(_content).length > 0);
 
@@ -54,7 +54,7 @@ contract TweeBle {
         tweets[tweetCount] = Tweet(
             tweetCount,
             _content,
-            block.timestamp,
+            _timestamp,
             0,
             0,
             payable(msg.sender)
